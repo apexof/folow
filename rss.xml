@@ -1,24 +1,120 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>{{ site.name | xml_escape }}</title>
-		<description>{{ site.description | xml_escape }}</description>
-		<link>{{ site.url }}</link>
-		<atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
-		{% for post in site.posts limit:10 %}
+		<title>folow</title>
+		<description>Description of main page</description>
+		<link>https://apexof.github.io</link>
+		<atom:link href="https://apexof.github.io/feed.xml" rel="self" type="application/rss+xml" />
+		
 			<item>
-				<title>{{ post.title | xml_escape }}</title>
+				<title>Article 1</title>
 				<description><![CDATA[
-					<a href="{{ site.url }}{{ post.url }}"><img width="100%" src="{{ site.url }}{{ post.image }}"></a>
-					{{ post.description | xml_escape }}
+					<a href="https://apexof.github.io/blog/music/2018-06-29-article-1.html"><img width="100%" src="https://apexof.github.ioimages/music/2018/05/24/article-1/1.jpg"></a>
+					
 					]]></description>
-				<pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-				<link>{{ site.url }}{{ post.url }}</link>
-				<guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+				<pubDate>Fri, 29 Jun 2018 00:00:00 +0300</pubDate>
+				<link>https://apexof.github.io/blog/music/2018-06-29-article-1.html</link>
+				<guid isPermaLink="true">https://apexof.github.io/blog/music/2018-06-29-article-1.html</guid>
 			</item>
-		{% endfor %}
+		
+			<item>
+				<title>Article 1</title>
+				<description><![CDATA[
+					<a href="https://apexof.github.io/blog/it-news/2018-06-29-article-1.html"><img width="100%" src="https://apexof.github.ioimages/it-news/2018/06/29/article-1/1.jpg"></a>
+					
+					]]></description>
+				<pubDate>Fri, 29 Jun 2018 00:00:00 +0300</pubDate>
+				<link>https://apexof.github.io/blog/it-news/2018-06-29-article-1.html</link>
+				<guid isPermaLink="true">https://apexof.github.io/blog/it-news/2018-06-29-article-1.html</guid>
+			</item>
+		
+			<item>
+				<title>Article 1</title>
+				<description><![CDATA[
+					<a href="https://apexof.github.io/blog/food/2018-06-29-article-1.html"><img width="100%" src="https://apexof.github.ioimages/food/2018/06/29/article-1/1.jpg"></a>
+					
+					]]></description>
+				<pubDate>Fri, 29 Jun 2018 00:00:00 +0300</pubDate>
+				<link>https://apexof.github.io/blog/food/2018-06-29-article-1.html</link>
+				<guid isPermaLink="true">https://apexof.github.io/blog/food/2018-06-29-article-1.html</guid>
+			</item>
+		
+			<item>
+				<title>Article 1</title>
+				<description><![CDATA[
+					<a href="https://apexof.github.io/blog/animals/2018-06-29-article-1.html"><img width="100%" src="https://apexof.github.ioimages/animals/2018/06/29/article-1/1.jpg"></a>
+					
+					]]></description>
+				<pubDate>Fri, 29 Jun 2018 00:00:00 +0300</pubDate>
+				<link>https://apexof.github.io/blog/animals/2018-06-29-article-1.html</link>
+				<guid isPermaLink="true">https://apexof.github.io/blog/animals/2018-06-29-article-1.html</guid>
+			</item>
+		
+			<item>
+				<title>Article 9</title>
+				<description><![CDATA[
+					<a href="https://apexof.github.io/blog/games/2018-05-26-article-9.html"><img width="100%" src="https://apexof.github.ioimages/games/2018/05/26/article-9/1.jpg"></a>
+					
+					]]></description>
+				<pubDate>Sat, 26 May 2018 00:00:00 +0300</pubDate>
+				<link>https://apexof.github.io/blog/games/2018-05-26-article-9.html</link>
+				<guid isPermaLink="true">https://apexof.github.io/blog/games/2018-05-26-article-9.html</guid>
+			</item>
+		
+			<item>
+				<title>Article 8</title>
+				<description><![CDATA[
+					<a href="https://apexof.github.io/blog/games/2018-05-26-article-8.html"><img width="100%" src="https://apexof.github.ioimages/games/2018/05/26/article-8/1.jpg"></a>
+					
+					]]></description>
+				<pubDate>Sat, 26 May 2018 00:00:00 +0300</pubDate>
+				<link>https://apexof.github.io/blog/games/2018-05-26-article-8.html</link>
+				<guid isPermaLink="true">https://apexof.github.io/blog/games/2018-05-26-article-8.html</guid>
+			</item>
+		
+			<item>
+				<title>Article 7</title>
+				<description><![CDATA[
+					<a href="https://apexof.github.io/blog/games/2018-05-26-article-7.html"><img width="100%" src="https://apexof.github.ioimages/games/2018/05/26/article-7/1.jpg"></a>
+					
+					]]></description>
+				<pubDate>Sat, 26 May 2018 00:00:00 +0300</pubDate>
+				<link>https://apexof.github.io/blog/games/2018-05-26-article-7.html</link>
+				<guid isPermaLink="true">https://apexof.github.io/blog/games/2018-05-26-article-7.html</guid>
+			</item>
+		
+			<item>
+				<title>Article 6</title>
+				<description><![CDATA[
+					<a href="https://apexof.github.io/blog/games/2018-05-26-article-6.html"><img width="100%" src="https://apexof.github.ioimages/games/2018/05/26/article-6/1.jpg"></a>
+					
+					]]></description>
+				<pubDate>Sat, 26 May 2018 00:00:00 +0300</pubDate>
+				<link>https://apexof.github.io/blog/games/2018-05-26-article-6.html</link>
+				<guid isPermaLink="true">https://apexof.github.io/blog/games/2018-05-26-article-6.html</guid>
+			</item>
+		
+			<item>
+				<title>Article 5</title>
+				<description><![CDATA[
+					<a href="https://apexof.github.io/blog/games/2018-05-26-article-5.html"><img width="100%" src="https://apexof.github.ioimages/games/2018/05/26/article-5/1.jpg"></a>
+					
+					]]></description>
+				<pubDate>Sat, 26 May 2018 00:00:00 +0300</pubDate>
+				<link>https://apexof.github.io/blog/games/2018-05-26-article-5.html</link>
+				<guid isPermaLink="true">https://apexof.github.io/blog/games/2018-05-26-article-5.html</guid>
+			</item>
+		
+			<item>
+				<title>Article 12</title>
+				<description><![CDATA[
+					<a href="https://apexof.github.io/blog/games/2018-05-26-article-12.html"><img width="100%" src="https://apexof.github.ioimages/games/2018/05/26/article-12/1.jpg"></a>
+					
+					]]></description>
+				<pubDate>Sat, 26 May 2018 00:00:00 +0300</pubDate>
+				<link>https://apexof.github.io/blog/games/2018-05-26-article-12.html</link>
+				<guid isPermaLink="true">https://apexof.github.io/blog/games/2018-05-26-article-12.html</guid>
+			</item>
+		
 	</channel>
 </rss>
