@@ -1,0 +1,70 @@
+.main-footer
+  padding: 25px 0
+  background-color: $dark-blue
+  border-bottom: 1px solid rgba(#fff, .1)
+
+.footer-menu
+  width: 100%
+  padding: 0
+  text-align: center
+  ul, li
+    padding: 0
+    margin: 0
+  li
+    display: inline-block
+    list-style-type: none
+    &.active, &:hover
+      a
+        color: #fff
+        text-decoration: underline
+    a
+      display: block
+      padding: 0 10px
+      font-size: 16px
+      font-weight: bold
+      line-height: 65px
+      color: #d1d9e0
+      text-decoration: none
+      text-transform: uppercase
+      transition: color .25s ease, background-color .25s ease
+
+.soc
+  padding: 15px 0 20px
+  ul, li
+    padding: 0
+    margin: 0
+    text-align: center
+  li
+    display: inline-block
+    list-style-type: none
+    a
+      display: block
+      width: 52px
+      height: 52px
+      margin: 4px
+      font-size: 24px
+      line-height: 50px
+      color: #fff
+      text-align: center
+      border: 1px solid rgba(#fff, .1)
+      border-radius: 26px
+      transition: border-color .25s ease, opacity .25s ease
+      .fab, .fas
+        opacity: .75
+        transition: opacity .25s ease
+      &:hover
+        border-color: rgba(#fff, .35)
+        .fab, .fas
+          opacity: 1
+
+.bottom-footer
+  padding: 25px 0 35px
+  background-color: $dark-blue
+  p
+    margin: 5px
+    font-size: 12px
+    color: rgba(#fff, .2)
+  .footer-copy
+    font-family: baron-g, sans-serif
+    font-size: 14px
+    color: rgba(#fff, .45)

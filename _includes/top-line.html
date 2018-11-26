@@ -1,0 +1,28 @@
+<header class="top-line">
+  <div class="mobile-menu-wrap">
+    <div class="mobile-menu-button">
+      <i class="fa fa-bars"></i>			
+    </div>
+    <nav class="main-menu mobile-menu">
+			<div class="close-button"><i class="fas fa-times"></i></div>
+			{% include /main-menu.html %}
+    </nav> 
+  </div>
+
+  <a href="{{ site.baseurl }}" class="logo">F<span>o</span>l<span>o</span>w</a>
+  
+   <div class="search-wrap">
+    <div class="search" title="Поиск по сайту">
+      <div class="fa fa-search"></div>
+    </div>
+    <div class="search-field">
+        <form action="/search.html" id="cse-search-box">
+          <input type="hidden" name="cx" value="partner-pub-xxx:xxx" />
+          <input type="hidden" name="cof" value="FORID:10" />
+          <input type="hidden" name="ie" value="UTF-8" />
+          <input class="search-input" type="text" name="q" placeholder="Поиск по сайту..." />
+        </form>
+    </div>
+  </div> 	
+
+</header>

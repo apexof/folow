@@ -1,0 +1,20 @@
+<div class="col-12">
+  <div class="pattern">
+      <div class="overlay item-title" style='background-image: url("{{ post.image }}")'>
+        <div class="item-title-content">
+          <h3><a href="{{ post.url }}">{{ post.main-title }}</a></h3>
+          <div class="item-social">
+            <div class="item-comments" title="Количество комментариев">
+              <i class="fa fa-comments"></i><a href="{{ post.url }}#disqus_thread" class="item-comments-count"></a>
+            </div>
+          </div>
+          <div class="fa fa-share-alt" title="Поделиться в соц. сетях"></div>
+          <div class="likely likely-custom" data-url="{{ site.url }}{{ post.url }}" data-media="{{ site.url }}/{{ post.image }}" data-title="{{ post.title }}">
+            <div class="vkontakte" title="Поделиться Вконтакте">Вконтакте</div>
+            <div class="facebook" title="Поделиться в Facebook">Facebook</div>
+            <div class="twitter" title="Поделиться в Twitter">Twitter</div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-9">
+      {% for post in paginator.posts limit: 9 %}
+      {% include /category/type-post.html %}
+      {% endfor %}
+    </div>

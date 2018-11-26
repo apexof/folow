@@ -1,0 +1,31 @@
+files:
+  include: "sass/main.sass"
+  ignore:
+    - node_modules/**
+    - libs/**
+syntax:
+  include:
+    - sass
+  ignore:
+    - scss
+resolvers:
+  property-sort-order: 1
+  attribute-quotes: 0
+  border-zero: 0
+  no-color-keywords: 0
+  no-css-comments: 0
+  no-important: 0
+  no-trailing-zero: 1
+  space-after-bang: 1
+  space-before-bang: 0
+  space-after-colon: 1
+  space-before-colon: 0
+  hex-length: 0
+  empty-line-between-blocks: 1
+  url-quotes: 0
+  zero-unit: 0
+  hex-notation: 0
+  indentation: 1
+  final-newline: 1
+options:
+  optOut: false

@@ -1,0 +1,28 @@
+.top-line
+  position: relative
+  height: 65px
+  background-color: $dark-blue
+
+.ispage > .top-line
+  position: absolute
+  z-index: 3
+  width: 100%
+
+@import 'mobile-menu'
+
+.logo
+  display: inline-block
+  padding: 0 15px 0 $gutter * 1.5
+  font-family: baron-g, sans-serif
+  font-size: 23px
+  line-height: 65px
+  color: #fff
+  text-decoration: none
+  text-transform: uppercase
+  &:hover, &:focus
+    color: #fff
+    text-decoration: none
+  span
+    color: $accent
+
+@import 'search-wrap'

@@ -1,0 +1,14 @@
+<div class="row cat-list">
+  <div class="col-md-6">      
+    <a href="{{ post.url }}">
+      <div class="cat-list-overlay">
+        <img src="{{ post.thumb }}" alt="alt" class="img-responsive img-width">
+      </div>
+    </a>
+  </div>
+  <div class="col-md-6">
+    <a href="{{ post.url }}"><h3>{{ post.main-title }}</h3></a>
+    <div class="date">{{ post.date | date: '%d' }}/{{ post.date | date: '%m' }}/{{ post.date | date: '%Y' }}</div>
+    <p>{{ post.content | strip_html | truncatewords: 30 }}</p>
+  </div>
+</div>

@@ -1,0 +1,300 @@
+// Embedded icons from Open Iconic.
+// Released under MIT and copyright 2014 Waybury.
+// https://useiconic.com/open
+
+
+// Checkboxes and radios
+//
+// Base class takes care of all the key behavioral aspects.
+
+.custom-control {
+  display: block;
+  min-height: (1rem * $line-height-base);
+  padding-left: $custom-control-gutter;
+  position: relative;
+}
+
+.custom-control-inline {
+  display: inline-flex;
+  margin-right: $custom-control-spacer-x;
+}
+
+.custom-control-input {
+  opacity: 0;
+  position: absolute; // Put the input behind the label so it doesn't overlay text
+  z-index: -1;
+
+  &:checked ~ .custom-control-label::before {
+    color: $custom-control-indicator-checked-color;
+    @include gradient-bg($custom-control-indicator-checked-bg);
+    @include box-shadow($custom-control-indicator-checked-box-shadow);
+  }
+
+  &:focus ~ .custom-control-label::before {
+    // the mixin is not used here to make sure there is feedback
+    box-shadow: $custom-control-indicator-focus-box-shadow;
+  }
+
+  &:active ~ .custom-control-label::before {
+    background-color: $custom-control-indicator-active-bg;
+    color: $custom-control-indicator-active-color;
+    @include box-shadow($custom-control-indicator-active-box-shadow);
+  }
+
+  &:disabled {
+    ~ .custom-control-label {
+      color: $custom-control-label-disabled-color;
+
+      &::before {
+        background-color: $custom-control-indicator-disabled-bg;
+      }
+    }
+  }
+}
+
+// Custom control indicators
+//
+// Build the custom controls out of psuedo-elements.
+
+.custom-control-label {
+  margin-bottom: 0;
+
+  // Background-color and (when enabled) gradient
+  &::before {
+    background-color: $custom-control-indicator-bg;
+    content: "";
+    display: block;
+    height: $custom-control-indicator-size;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: (($line-height-base - $custom-control-indicator-size) / 2);
+    user-select: none;
+    width: $custom-control-indicator-size;
+    @include box-shadow($custom-control-indicator-box-shadow);
+  }
+
+  // Foreground (icon)
+  &::after {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: $custom-control-indicator-bg-size;
+    content: "";
+    display: block;
+    height: $custom-control-indicator-size;
+    left: 0;
+    position: absolute;
+    top: (($line-height-base - $custom-control-indicator-size) / 2);
+    width: $custom-control-indicator-size;
+  }
+}
+
+
+// Checkboxes
+//
+// Tweak just a few things for checkboxes.
+
+.custom-checkbox {
+  .custom-control-label::before {
+    @include border-radius($custom-checkbox-indicator-border-radius);
+  }
+
+  .custom-control-input:checked ~ .custom-control-label {
+    &::before {
+      @include gradient-bg($custom-control-indicator-checked-bg);
+    }
+
+    &::after {
+      background-image: $custom-checkbox-indicator-icon-checked;
+    }
+  }
+
+  .custom-control-input:indeterminate ~ .custom-control-label {
+    &::before {
+      @include gradient-bg($custom-checkbox-indicator-indeterminate-bg);
+      @include box-shadow($custom-checkbox-indicator-indeterminate-box-shadow);
+    }
+
+    &::after {
+      background-image: $custom-checkbox-indicator-icon-indeterminate;
+    }
+  }
+
+  .custom-control-input:disabled {
+    &:checked ~ .custom-control-label::before {
+      background-color: $custom-control-indicator-checked-disabled-bg;
+    }
+    &:indeterminate ~ .custom-control-label::before {
+      background-color: $custom-control-indicator-checked-disabled-bg;
+    }
+  }
+}
+
+// Radios
+//
+// Tweak just a few things for radios.
+
+.custom-radio {
+  .custom-control-label::before {
+    border-radius: $custom-radio-indicator-border-radius;
+  }
+
+  .custom-control-input:checked ~ .custom-control-label {
+    &::before {
+      @include gradient-bg($custom-control-indicator-checked-bg);
+    }
+
+    &::after {
+      background-image: $custom-radio-indicator-icon-checked;
+    }
+  }
+
+  .custom-control-input:disabled {
+    &:checked ~ .custom-control-label::before {
+      background-color: $custom-control-indicator-checked-disabled-bg;
+    }
+  }
+}
+
+
+// Select
+//
+// Replaces the browser default select with a custom one, mostly pulled from
+// http://primercss.io.
+//
+
+.custom-select {
+  appearance: none;
+  background: $custom-select-bg $custom-select-indicator no-repeat right $custom-select-padding-x center;
+  background-size: $custom-select-bg-size;
+  border: $custom-select-border-width solid $custom-select-border-color;
+  color: $custom-select-color;
+  display: inline-block;
+  height: $custom-select-height;
+  line-height: $custom-select-line-height;
+  padding: $custom-select-padding-y ($custom-select-padding-x + $custom-select-indicator-padding) $custom-select-padding-y $custom-select-padding-x;
+  vertical-align: middle;
+  @if $enable-rounded {
+    border-radius: $custom-select-border-radius;
+  } @else {
+    border-radius: 0;
+  }
+  width: 100%;
+
+  &:focus {
+    border-color: $custom-select-focus-border-color;
+    box-shadow: $custom-select-focus-box-shadow;
+    outline: 0;
+
+    &::-ms-value {
+      // For visual consistency with other platforms/browsers,
+      // suppress the default white text on blue background highlight given to
+      // the selected option text when the (still closed) <select> receives focus
+      // in IE and (under certain conditions) Edge.
+      // See https://github.com/twbs/bootstrap/issues/19398.
+      background-color: $input-bg;
+      color: $input-color;
+    }
+  }
+
+  &[multiple],
+  &[size]:not([size="1"]) {
+    background-image: none;
+    height: auto;
+    padding-right: $custom-select-padding-x;
+  }
+
+  &:disabled {
+    background-color: $custom-select-disabled-bg;
+    color: $custom-select-disabled-color;
+  }
+
+  // Hides the default caret in IE11
+  &::-ms-expand {
+    opacity: 0;
+  }
+}
+
+.custom-select-sm {
+  font-size: $custom-select-font-size-sm;
+  height: $custom-select-height-sm;
+  padding-bottom: $custom-select-padding-y;
+  padding-top: $custom-select-padding-y;
+}
+
+.custom-select-lg {
+  font-size: $custom-select-font-size-lg;
+  height: $custom-select-height-lg;
+  padding-bottom: $custom-select-padding-y;
+  padding-top: $custom-select-padding-y;
+}
+
+
+// File
+//
+// Custom file input.
+
+.custom-file {
+  display: inline-block;
+  height: $custom-file-height;
+  margin-bottom: 0;
+  position: relative;
+  width: 100%;
+}
+
+.custom-file-input {
+  height: $custom-file-height;
+  margin: 0;
+  opacity: 0;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+
+  &:focus ~ .custom-file-control {
+    border-color: $custom-file-focus-border-color;
+    box-shadow: $custom-file-focus-box-shadow;
+
+    &::before {
+      border-color: $custom-file-focus-border-color;
+    }
+  }
+
+  @each $lang, $value in $custom-file-text {
+    &:lang(#{$lang}) ~ .custom-file-label::after {
+      content: $value;
+    }
+  }
+}
+
+.custom-file-label {
+  background-color: $custom-file-bg;
+  border: $custom-file-border-width solid $custom-file-border-color;
+  color: $custom-file-color;
+  height: $custom-file-height;
+  left: 0;
+  line-height: $custom-file-line-height;
+  padding: $custom-file-padding-y $custom-file-padding-x;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  @include border-radius($custom-file-border-radius);
+  @include box-shadow($custom-file-box-shadow);
+
+  &::after {
+    border-left: $custom-file-border-width solid $custom-file-border-color;
+    bottom: 0;
+    color: $custom-file-button-color;
+    content: "Browse";
+    display: block;
+    height: calc(#{$custom-file-height} - #{$custom-file-border-width} * 2);
+    line-height: $custom-file-line-height;
+    padding: $custom-file-padding-y $custom-file-padding-x;
+    position: absolute;
+    right: 0;
+    top: 0;
+    @include gradient-bg($custom-file-button-bg);
+    z-index: 3;
+    @include border-radius(0 $custom-file-border-radius $custom-file-border-radius 0);
+  }
+}

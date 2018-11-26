@@ -1,0 +1,21 @@
+    <div class="col-lg-3">
+      <aside class="main-aside">
+        <div class="aside-box right-menu">
+          <aside>
+            <nav class="main-menu right-menu">
+              {% include /main-menu.html %}
+            </nav> 
+          </aside>
+				</div>
+        {{ post }}
+				{% if page.thumb or paginator.posts %}
+					{% include /latest-posts.html %}
+				{% endif %}
+
+				{% if page.url == '/' %}
+					{% include /latest-comments.html %}
+				{% endif %}
+      </aside>							
+    </div>
+  </div>
+</div>	

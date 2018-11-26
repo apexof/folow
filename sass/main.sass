@@ -1,0 +1,109 @@
+@import 'vars'
+@import 'fonts'
+@import 'libs'
+
+::placeholder
+  color: #666
+
+::selection
+  color: #fff
+  background-color: $accent2
+
+html
+  height: 100%
+
+body
+  position: relative
+  height: 100%
+  min-width: 320px
+  overflow-x: hidden
+  font-family: $default-font
+  font-size: 18px
+  line-height: 1.5
+  color: $text-color
+  input, textarea
+    border: #666 1px solid
+    outline: none
+
+.img-responsive
+  display: block
+  height: auto
+  max-width: 100%
+  &.img-width
+    width: 100%
+
+.text-center
+  text-align: center
+
+a
+  color: $accent
+  text-decoration: underline
+  &:hover, &:focus
+    color: $accent
+
+@import 'top-line/top-line'
+
+.container-fluid
+  max-width: 1346px
+  padding: $gutter
+
+@import 'aside'
+
+section
+  padding-bottom: $gutter
+  background-color: $sections-color
+  h2
+    margin: 0
+    font-size: 20px
+    font-weight: 800
+    text-transform: uppercase
+
+@import 'item'
+
+.s_more
+  padding: $gutter * 2 0
+  background-color: $medium-grey
+.button
+  position: relative
+  display: inline-block
+  padding: 12px 40px
+  font-size: 14px
+  font-weight: 600
+  color: #fff
+  text-align: center
+  text-decoration: none
+  text-transform: uppercase
+  cursor: pointer
+  background-color: $accent
+  border: 0
+  border-radius: 10em
+  outline: none
+  transition: background-color, .1s ease
+  &:hover, &:focus
+    color: #fff
+    text-decoration: none
+  &:hover
+    background-color: darken($accent, 3%)
+  &:active
+    background-color: darken($accent, 7%)
+
+@import 'footer'
+@import 'category'
+
+.date
+  margin: 10px 0
+  font-size: 14px
+  font-weight: 600
+  color: $accent
+
+@import 'pagination'
+
+.all-posts-header
+  font-size: 30px
+  line-height: 30px
+  color: #8e8e8e
+
+@import 'latest-posts'
+@import 'article'
+@import 'last-comments'
+@import 'media' // Always at the end

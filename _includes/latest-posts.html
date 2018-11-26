@@ -1,0 +1,22 @@
+<div class="aside-box latest-box">
+  <div class="lb-header">Last articles:</div>
+    <div class="lb-list">
+        {% for cat in site.categories limit: 5 %}
+          {% capture cat_name %}{{ cat[0] }}{% endcapture %}
+          {% for post in site.categories[cat_name] limit: 1 %}         
+            <div class="lb-item">
+              <a href="blog/{{ post.categories }}/" class="lb-catname">{{ post.catname }}</a>
+              <div class="lb-body">              
+                <a class="lb-item-header" href="{{ post.url }}">{{ post.main-title }}</a>
+                <div class="lb-footer">
+                  <div class="item-comments" title="Количество комментариев">
+                    <i class="fa fa-comment"></i><a class="item-comments-count" href="{{ post.url }}#disqus_thread"></a>
+                    <span class="date">{{ post.date | date: '%d' }}/{{ post.date | date: '%m' }}/{{ post.date | date: '%Y' }}</span>
+                  </div>
+                </div>              
+              </div>
+            </div>
+        {% endfor %}
+      {% endfor %}      
+  </div>
+</div>

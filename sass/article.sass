@@ -1,0 +1,110 @@
+$margin-v: 25px
+// Картинка статьи
+.header-img
+  position: relative
+  height: 80vh
+  min-height: 460px
+  color: #fff
+  background-position: center
+  background-size: cover
+  &::before
+    position: absolute
+    width: 100%
+    height: 100%
+    background-color: transparent
+    background-image: linear-gradient(rgba(#000, .2), rgba(#000, .7))
+    content: ''
+    opacity: 1
+.page-header-content
+  position: absolute
+  bottom: 15%
+  width: 100%
+.page-header-meta
+  .date
+    font-size: 15px
+    color: #fff
+  h1
+    margin: 15px 0
+    font-size: 32px
+    line-height: 1.2
+  .item-comments-count
+    color: #fff
+  .page-category-link
+    padding: 3px 6px 2px
+    margin-right: 5px
+    font-size: 14px
+    font-weight: 800
+    color: #fff
+    text-decoration: none
+    text-transform: uppercase
+    background-color: $accent2
+
+.article-content
+  padding: 0
+  background-color: #fff
+
+.breadcrumps
+  margin: 10px 0 20px -10px
+  ul, li
+    padding: 0
+    margin: 0
+    list-style-type: none
+  li
+    display: inline-block
+    font-size: 16px
+    a
+      position: relative
+      padding: 0 10px
+      &::after
+        position: absolute
+        right: -6px
+        color: $super-grey
+        content: '»'
+    &.active
+      padding-left: 10px
+      color: $super-grey
+
+// Типографика статьи
+
+.article-body
+  margin-bottom: $margin-v
+  p
+    margin: 0 0 10px
+    line-height: 1.6
+  img
+    display: block
+    height: auto
+    max-width: 100%
+    margin: $margin-v auto
+  h2
+    line-height: 1.2
+    margin: 20px 0 10px
+  h3
+    margin: 35px 0 10px
+  blockquote
+    padding: $gutter
+    margin: $gutter * 2 $gutter * 2.5
+    font-size: 20px
+    color: #000
+    border:
+      top: $accent2 2px solid
+      bottom: $accent2 2px solid
+  .video
+    position: relative
+    height: 0
+    padding-top: 25px
+    padding-bottom: 56.25%
+    margin: $gutter 0
+    iframe
+      position: absolute
+      top: 0
+      left: 0
+      width: 100% !important
+      height: 100% !important
+      border: 0
+  pre
+    padding: 8px
+    margin: $margin-v 0
+    background-color: $medium-grey
+
+@import 'likely'
